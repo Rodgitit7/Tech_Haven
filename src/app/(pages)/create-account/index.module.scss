@@ -47,11 +47,11 @@
   background-position: center;
   background-image: url('/assets/images/image-2.svg');
 
-  @include mid-break {
-    background: none;
-    display: flex;
-    justify-content: center;
-  }
+  // @include mid-break {
+  //   background: none;
+  //   display: flex;
+  //   justify-content: center;
+  // }
 }
 
 .logo {
@@ -87,10 +87,10 @@
   padding: 50px;
   border-radius: 10px;
 
-  @include mid-break {
-    backdrop-filter: blur(30px);
-    background-color: rgba(255, 255, 255, 0.9);
-    box-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+   @include mid-break {
+  //   backdrop-filter: blur(30px);
+     background-color: rgb(27, 27, 27);
+  //   box-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05);
   }
 
   @include small-break {
