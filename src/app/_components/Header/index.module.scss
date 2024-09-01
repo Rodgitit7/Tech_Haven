@@ -1,22 +1,26 @@
-@use '../../_css/queries.scss' as *;
-
-.header {
-  padding: var(--base) 0;
+{
+  /* eslint-disable @next/next/no-img-element */
 }
 
-.wrap {
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  gap: calc(var(--base) / 2) var(--base);
-}
+import React from 'react'
+import Link from 'next/link'
 
-.logo {
-  width: 150px;
-}
+import { Header } from '../../../payload/payload-types'
+import { fetchHeader } from '../../_api/fetchGlobals'
+import HeaderComponent from './HeaderComponent'
 
-:global([data-theme="light"]) {
-  .logo {
-    filter: invert(1);
+export async function Header() {
+  let header: Header | null = null
+
+  try {
+    header = await fetchHeader()
+  } catch (error) {
+    console.log(error)
   }
+
+  return (
+    <>
+      <HeaderComponent header={header} />
+    </>
+  )
 }
