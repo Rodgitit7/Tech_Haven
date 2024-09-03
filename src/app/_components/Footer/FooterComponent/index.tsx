@@ -10,7 +10,7 @@ import { inclusions, noHeaderFooterUrls, profileNavItems } from '../../../consta
 import { Button } from '../../Button'
 import { Gutter } from '../../Gutter'
 
-import classes from './../index.module.scss'
+import classes from '../FooterComponent/index.module.scss'
 
 const FooterComponent = ({ footer }: { footer: Footer }) => {
   const pathname = usePathname()
@@ -19,21 +19,22 @@ const FooterComponent = ({ footer }: { footer: Footer }) => {
   return (
     <footer className={noHeaderFooterUrls.includes(pathname) ? classes.hide : ''}>
       <Gutter>
-        <ul className={classes.inclusions}></ul>
-        {inclusions.map((inclusion, index) => (
-          <li key={inclusion.title}>
-            <Image
-              src={inclusion.icon}
-              alt={inclusion.title}
-              width={36}
-              height={36}
-              className={classes.icon}
-            />
+        <ul className={classes.inclusions}>
+          {inclusions.map(inclusion => (
+            <li key={inclusion.title}>
+              <Image
+                src={inclusion.icon}
+                alt={inclusion.title}
+                width={36}
+                height={36}
+                className={classes.icon}
+              />
 
-            <h5 className={classes.title}>{inclusion.title}</h5>
-            <p>{inclusion.description}</p>
-          </li>
-        ))}
+              <h5 className={classes.title}>{inclusion.title}</h5>
+              <p>{inclusion.description}</p>
+            </li>
+          ))}
+        </ul>
       </Gutter>
 
       <div className={classes.footer}>
@@ -43,7 +44,7 @@ const FooterComponent = ({ footer }: { footer: Footer }) => {
               <Image src="/logo-white.svg" alt="logo" width={170} height={50} />
             </Link>
 
-            <p>{footer.copyright}</p>
+            <p>{footer?.copyright}</p>
 
             <div className={classes.socialLinks}>
               {navItems.map(item => {
