@@ -1,3 +1,4 @@
+/* eslint-disable prettier/prettier */
 import React, { Fragment } from 'react'
 
 import { Page } from '../../../payload/payload-types'
@@ -11,7 +12,8 @@ import classes from './index.module.scss'
 export const CustomHero: React.FC<Page['hero']> = ({ richText, media, links }) => {
   return (
     <Gutter className={classes.hero}>
-      <div className={classes.content}>
+      <h1>This is custom</h1>
+       {/* <div className={classes.content}>
         <RichText content={richText} />
         {Array.isArray(links) && links.length > 0 && (
           <ul className={classes.links}>
@@ -37,7 +39,7 @@ export const CustomHero: React.FC<Page['hero']> = ({ richText, media, links }) =
             {media?.caption && <RichText content={media.caption} className={classes.caption} />}
           </Fragment>
         )}
-      </div>
+      </div> */}
     </Gutter>
   )
 }
