@@ -10,7 +10,7 @@ import { inclusions, noHeaderFooterUrls, profileNavItems } from '../../../consta
 import { Button } from '../../Button'
 import { Gutter } from '../../Gutter'
 
-import classes from '../FooterComponent/index.module.scss'
+import classes from './index.module.scss'
 
 const FooterComponent = ({ footer }: { footer: Footer }) => {
   const pathname = usePathname()
