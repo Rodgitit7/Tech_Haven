@@ -12,9 +12,9 @@ import { Price } from '../../../_components/Price'
 import { RemoveFromCartButton } from '../../../_components/RemoveFromCartButton'
 import { useAuth } from '../../../_providers/Auth'
 import { useCart } from '../../../_providers/Cart'
+import CartItem from '../cartItem'
 
 import classes from './index.module.scss'
-import CartItem from '../cartItem'
 
 export const CartPage: React.FC<{
   settings: Settings
@@ -80,14 +80,13 @@ export const CartPage: React.FC<{
 
                   const metaImage = meta?.image
 
-                  return(
+                  return (
                     <CartItem
                       product={product}
                       title={title}
                       metaImage={metaImage}
-                      index={index}
                       qty={quantity}
-                      addItemToCart={addItemCart}
+                      addItemToCart={addItemToCart}
                     />
                   )
                 }
