@@ -1,3 +1,4 @@
+/* eslint-disable prettier/prettier */
 import React, { Fragment } from 'react'
 
 import { Page } from '../../../payload/payload-types'
