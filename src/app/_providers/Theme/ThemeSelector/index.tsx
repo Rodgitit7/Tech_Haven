@@ -26,7 +26,7 @@ export const ThemeSelector: React.FC = () => {
   React.useEffect(() => {
     const preference = window.localStorage.getItem(themeLocalStorageKey)
     if (selectRef.current) {
-      selectRef.current.value = preference ?? 'auto'
+      selectRef.current.value = preference ?? 'light'
       setShow(true)
     }
   }, [])
@@ -40,9 +40,8 @@ export const ThemeSelector: React.FC = () => {
           ref={selectRef}
           className={classes.select}
         >
-          <option value="auto">Auto</option>
           <option value="light">Light</option>
-          <option value="dark">Dark</option>
+
         </select>
         <div className={classes.selectIcon}>
           <Chevron className={classes.iconUp} />
