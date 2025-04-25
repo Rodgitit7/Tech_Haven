@@ -7,6 +7,8 @@ dotenv.config({
   path: path.resolve(__dirname, '../.env'),
 })
 
+console.log('MONGODB_URI:', process.env.MONGODB_URI)  // This should be outside of dotenv.config()
+
 import express from 'express'
 import payload from 'payload'
 
